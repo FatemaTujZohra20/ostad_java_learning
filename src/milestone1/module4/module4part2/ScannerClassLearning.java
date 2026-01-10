@@ -8,12 +8,25 @@ public class ScannerClassLearning {
 
         // ______________________________________________________________________________
         // To understand hasNext(), just do the following code
+//        Scanner input = new Scanner(System.in);
+//
+//        if (input.hasNext()){
+//            System.out.println("User typed something!");
+//        }
+        // ______________________________________________________________________________
+
+
+        // ______________________________________________________________________________
+        // To understand hasNextX(), just do the following code
         Scanner input = new Scanner(System.in);
 
-        if (input.hasNext()){
-            System.out.println("User typed something!");
+        if (input.hasNextDouble()){
+            double x = input.nextDouble();
+            System.out.println("Printing the double: " + x);
+        } else {
+            System.out.println("Invalid Input");
+            input.next();
         }
-        // ______________________________________________________________________________
 
     }
 }
