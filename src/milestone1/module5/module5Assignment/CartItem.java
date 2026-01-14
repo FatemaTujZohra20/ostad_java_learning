@@ -45,8 +45,9 @@ public class CartItem {
 
 
     /**
-     * Decreases the item count. If quantity drops to 0,
-     * the item is automatically flagged as removed from the cart.
+     * Decreases the item count by one.
+     * As per requirements, the quantity will not drop below 1.
+     * To remove an item entirely, use the toggle/remove feature.
      */
     public void decrementQuantity() {
         if (!this.addedToCart) {
@@ -54,14 +55,31 @@ public class CartItem {
             return;
         }
 
+        // Wrong Way
+//        if (this.quantity > 1) {
+//            this.quantity--;
+//        } else {
+//            // Remove item from cart if it hits zero
+//            this.addedToCart = false;
+//            this.quantity = 0;
+//            System.out.println(this.name + " reached 0 and was removed from cart.");
+//        }
+
+
+        /**
+         * Right way
+         * CHANGE: Only subtract if it results in at least 1
+         * By fixing the decrementQuantity method, I am ensuring that:
+         * Case 6 (Decrement) is strictly for adjusting numbers.
+         * Case 1-3 (Toggle) is strictly for adding/removing.
+         */
         if (this.quantity > 1) {
             this.quantity--;
         } else {
-            // Remove item from cart if it hits zero
-            this.addedToCart = false;
-            this.quantity = 0;
-            System.out.println(this.name + " reached 0 and was removed from cart.");
+            // Just inform the user; do NOT set to 0 or false
+            System.out.println("Minimum quantity reached. To Remove " + this.name + ", please use the selection menu.");
         }
+
     }
 
 
