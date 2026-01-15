@@ -6,9 +6,9 @@ public class Owner {
     private int petsAdopted;
 
 
-    public Owner(String address, String name) {
-        this.address = address;
+    public Owner(String name, String address) {
         this.name = name;
+        this.address = address;
         this.petsAdopted = 0;
     }
 
