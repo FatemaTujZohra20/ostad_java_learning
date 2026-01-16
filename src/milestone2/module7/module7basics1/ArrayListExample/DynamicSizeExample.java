@@ -6,6 +6,11 @@ package milestone2.module7.module7basics1.ArrayListExample;
 // (e.g., logs, API responses, user input).
 // Dynamic size: It automatically grows when elements are added
 
+// Why ArrayList? ->
+//  Automatically resizes
+//  No manual memory management
+
+
 import java.util.ArrayList;
 
 /**
