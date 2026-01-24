@@ -8,14 +8,20 @@ class Student {
 
 public class ArrayOfObjects {
     public static void main(String[] args) {
-//        int nums[] = new int[4];
-//        nums[0] = 4;
-//        nums[1] = 6;
-//        nums[2] = 9;
-//        nums[3] = 5;
-//
+        int nums[] = new int[4];
+        nums[0] = 4;
+        nums[1] = 6;
+        nums[2] = 9;
+        nums[3] = 5;
+
 //        for (int i = 0; i < nums.length; i++) {
 //            System.out.println(nums[i]);
+//        }
+
+        // Enhanced for loop
+        // --------------------------
+//        for (int num : nums) {
+//            System.out.println(num);
 //        }
 
         Student s1 = new Student();
@@ -38,8 +44,15 @@ public class ArrayOfObjects {
         students[1] = s2;
         students[2] = s3;
 
-        for (int i = 0; i<students.length; i++) {
-            System.out.println(students[i].rollno + ". " + students[i].name + " " + students[i].age);
+//        for (int i = 0; i<students.length; i++) {
+//            System.out.println(students[i].rollno + ". " + students[i].name + " " + students[i].age);
+//        }
+
+
+        // Enhanced for loop
+        // --------------------------
+        for (Student stud : students) {
+            System.out.println(stud.rollno + ". " + stud.name + " " + stud.age);
         }
     }
 }
